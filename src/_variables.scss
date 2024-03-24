@@ -2,4 +2,25 @@
   --padding-base: 16px;
   --padding-base-half: 8px;
   --padding-base-quarter: 4px;
+
+  --button-font-size-small: 13.333333333333333px;
+  --button-font-size-medium: 20px;
+  --button-font-size-large: 30px;
+
+  --border-radius-base: 3px;
+
+  --box-shadow-base: 1px;
+  --box-shadow-base-active: 4px;
+
+  --transition-duration-base: 400ms;
+
+  --color-primary: rgba(41, 96, 152);
+  --color-secondary: rgba(110, 117, 124);
+  --color-success: rgb(31, 210, 21);
+  --color-danger: rgba(198, 56, 52);
+
+  --color-white: rgba(255, 255, 255);
+  --color-white-dark: rgb(208, 208, 208);
+  --color-black: rgba(0, 0, 0);
+  --color-black-light: rgb(37, 37, 37);
 }
