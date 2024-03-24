@@ -1,10 +1,23 @@
-<table>
-  <thead>Thead</thead>
-  <tr>
-    <th>Registracni cislo</th>
-    <th>Nazev skoly, reditel skoly, telefon</th>
-    <th>Adresa</th>
-    <th>Kraj</th>
-    <th>email</th>
-  </tr>
-</table>
+<div>
+  <mmz-heading>Clenove Cechu topenaru a instalateru Ceske republiky, z.s. Rok {{ currentYear }}</mmz-heading>
+  <table>
+    <tr>
+      <th>Registracni cislo</th>
+      <th>Nazev skoly, reditel skoly, telefon</th>
+      <th>Adresa</th>
+      <th>Kraj</th>
+      <th>email</th>
+      <th>Aktivni</th>
+      <th>Uhrazeno</th>
+    </tr>
+    <tr *ngFor="let data of data; index as i">
+      <td>{{data.registration_number}}</td>
+      <td>{{data.name}} <br> {{data.principal}} <br> {{data.phone}}</td>
+      <td>{{data.address}}</td>
+      <td>{{data.province}}</td>
+      <td>{{data.email}}</td>
+      <td><mmz-checkbox [disabled]="false" label="tutu"></mmz-checkbox></td>
+      <td>{{data.payed ? 'Ano' : 'Ne'}}</td>
+    </tr>
+  </table>
+</div>
