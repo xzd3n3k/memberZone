@@ -1,0 +1,25 @@
+.tabs-list {
+  display: inline-flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: var(--color-grey-light);
+  width: 100%;
+}
+
+.tabs-container .tab {
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tabs-container {
+  :not(:last-of-type) {
+    border-right: 1px solid black;
+  }
+}
+
+.tabs-container .tab.active {
+  color: white;
+  background-color: var(--color-grey);
+}
