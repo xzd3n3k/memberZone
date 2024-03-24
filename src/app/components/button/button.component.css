@@ -5,15 +5,43 @@
     padding: var(--padding-base-half) var(--padding-base);
     border-radius: 3px;
 
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+
     &:active {
       transition-duration: var(--transition-duration-base);
       box-shadow: 0 0 var(--box-shadow-base-active) var(--color-black-light);
     }
   }
   .primary {
-    button {
-      background-color: var(--color-primary);
-      color: var(--color-white);
+    --button-color: var(--color-primary);
+    --button-text-color: var(--color-white);
+    &:hover {
+      --button-color: var(--color-primary-hover);
+    }
+  }
+
+  .secondary {
+    --button-color: var(--color-secondary);
+    --button-text-color: var(--color-white);
+    &:hover {
+      --button-color: var(--color-secondary-hover);
+    }
+  }
+
+  .danger {
+    --button-color: var(--color-danger);
+    --button-text-color: var(--color-white);
+    &:hover {
+      --button-color: var(--color-danger-hover);
+    }
+  }
+
+  .success {
+    --button-color: var(--color-success);
+    --button-text-color: var(--color-white);
+    &:hover {
+      --button-color: var(--color-success-hover);
     }
   }
 }
