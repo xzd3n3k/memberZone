@@ -1,0 +1,17 @@
+:host {
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .checkbox-label {
+    user-select: none;
+  }
+
+  .disabled {
+    opacity: 0.3;
+    user-select: none;
+    pointer-events: none;
+  }
+}
