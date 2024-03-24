@@ -1,0 +1,6 @@
+<div [class.disabled]="disabled" class="{{color}}">
+  <button [style.font-size]="getSize()" *ngIf="!label">
+    <ng-content></ng-content>
+  </button>
+  <button [style.font-size]="getSize()" *ngIf="label">{{label}}</button>
+</div>

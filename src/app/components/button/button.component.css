@@ -1,0 +1,19 @@
+:host {
+  button {
+    border: 0;
+    box-shadow: 0 0 var(--box-shadow-base) var(--color-black-light);
+    padding: var(--padding-base-half) var(--padding-base);
+    border-radius: 3px;
+
+    &:active {
+      transition-duration: var(--transition-duration-base);
+      box-shadow: 0 0 var(--box-shadow-base-active) var(--color-black-light);
+    }
+  }
+  .primary {
+    button {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+  }
+}
