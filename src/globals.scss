@@ -77,3 +77,9 @@
 .justify-center {
   justify-content: center;
 }
+
+.table-row {
+  &:hover {
+    background-color: var(--color-white-dark);
+  }
+}

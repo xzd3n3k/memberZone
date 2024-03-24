@@ -11,7 +11,7 @@
       <th>Uhrazeno</th>
       <th></th>
     </tr>
-    <tr *ngFor="let data of data; index as i">
+    <tr class="table-row" *ngFor="let data of data; index as i">
       <td>{{data.registration_number}}</td>
       <td>{{data.name}} <br> {{data.principal}} <br> {{data.phone}}</td>
       <td>{{data.address}}</td>
