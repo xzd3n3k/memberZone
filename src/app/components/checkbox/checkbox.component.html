@@ -1,4 +1,4 @@
 <div class="checkbox-container" (click)="toggleCheckbox()" [class.disabled]="disabled" [style.flex-direction]="labelPosition === 'left' ? 'row' : 'row-reverse'">
   <span class="checkbox-label">{{label}}</span>
-  <input [style.width]="getSize()" [style.height]="getSize()" type="checkbox" [indeterminate]="indeterminate" [checked]="checked">
+  <input class="{{color}}" [style.width]="getSize()" [style.height]="getSize()" type="checkbox" [indeterminate]="indeterminate" [checked]="checked">
 </div>

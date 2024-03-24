@@ -8,4 +8,21 @@
   .checkbox-label {
     user-select: none;
   }
+
+  input {
+    accent-color: var(--checkbox-color);
+  }
+
+  .primary {
+    --checkbox-color: var(--color-primary);
+  }
+  .secondary {
+    --checkbox-color: var(--color-secondary);
+  }
+  .success {
+    --checkbox-color: var(--color-success);
+  }
+  .danger {
+    --checkbox-color: var(--color-danger);
+  }
 }
