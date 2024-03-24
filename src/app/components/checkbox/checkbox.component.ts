@@ -10,7 +10,7 @@ import {ChangeDetectorRef, Component, Input} from '@angular/core';
 export class CheckboxComponent {
   @Input() label?: string;
   @Input() value?: string;
-  @Input() size: 'small' | 'medium' | 'large' = 'medium';
+  @Input() size: 'small' | 'medium' | 'large' = 'small';
   @Input() labelPosition: 'left' | 'right' = 'left';
   @Input() checked: boolean = false;
   @Input() indeterminate: boolean = false;
@@ -19,5 +19,9 @@ export class CheckboxComponent {
   protected toggleCheckbox() {
     this.checked = !this.checked;
   }
-  
+
+  protected getSize(): string {
+    return `var(--checkbox-size-${this.size})`;
+  }
+
 }
