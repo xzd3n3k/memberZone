@@ -3,9 +3,17 @@
   --padding-base-half: 8px;
   --padding-base-quarter: 4px;
 
-  --button-font-size-small: 13.333333333333333px;
-  --button-font-size-medium: 20px;
+  --gap-base: 16px;
+  --gap-base-half: 8px;
+  --gap-base-quarter: 4px;
+
+  --button-font-size-small: 12px;
+  --button-font-size-medium: 21px;
   --button-font-size-large: 30px;
+
+  --checkbox-size-small: 12px;
+  --checkbox-size-medium: 21px;
+  --checkbox-size-large: 30px;
 
   --border-radius-base: 3px;
 
@@ -14,13 +22,20 @@
 
   --transition-duration-base: 400ms;
 
-  --color-primary: rgba(41, 96, 152);
-  --color-secondary: rgba(110, 117, 124);
-  --color-success: rgb(31, 210, 21);
-  --color-danger: rgba(198, 56, 52);
+  --color-primary: rgb(41, 96, 152);
+  --color-primary-hover: rgb(41, 105, 171);
+  --color-primary-light: rgb(50, 115, 246);
+  --color-secondary: rgb(110, 117, 124);
+  --color-secondary-hover: rgb(122, 127, 133);
+  --color-success: rgb(52, 173, 49);
+  --color-success-hover: rgb(52, 183, 68);
+  --color-danger: rgb(198, 56, 52);
+  --color-danger-hover: rgb(206, 68, 74);
 
-  --color-white: rgba(255, 255, 255);
+  --color-white: rgb(255, 255, 255);
   --color-white-dark: rgb(208, 208, 208);
-  --color-black: rgba(0, 0, 0);
+  --color-black: rgb(0, 0, 0);
   --color-black-light: rgb(37, 37, 37);
+  --color-grey: rgb(147, 147, 147);
+  --color-grey-light: rgb(201, 201, 201);
 }

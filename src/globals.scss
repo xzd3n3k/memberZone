@@ -61,3 +61,19 @@
   user-select: none;
   pointer-events: none;
 }
+
+.gap-base {
+  gap: var(--gap-base);
+}
+
+.gap-base-half {
+  gap: var(--gap-base-half);
+}
+
+.borderless {
+  border: unset !important;
+}
+
+.justify-center {
+  justify-content: center;
+}
