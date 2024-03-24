@@ -1,14 +1,15 @@
 <div>
-  <mmz-heading>Clenove Cechu topenaru a instalateru Ceske republiky, z.s. Rok {{ currentYear }}</mmz-heading>
+  <mmz-heading>Členové Cechu topenářů a instalatérů České republiky, z.s. Rok {{ currentYear }}</mmz-heading>
   <table>
     <tr>
-      <th>Registracni cislo</th>
-      <th>Nazev skoly, reditel skoly, telefon</th>
+      <th>Registrační číslo</th>
+      <th>Název školy, ředitel školy, telefon</th>
       <th>Adresa</th>
       <th>Kraj</th>
-      <th>email</th>
-      <th>Aktivni</th>
+      <th>Email</th>
+      <th>Aktivní</th>
       <th>Uhrazeno</th>
+      <th></th>
     </tr>
     <tr *ngFor="let data of data; index as i">
       <td>{{data.registration_number}}</td>
@@ -16,8 +17,14 @@
       <td>{{data.address}}</td>
       <td>{{data.province}}</td>
       <td>{{data.email}}</td>
-      <td><mmz-checkbox [disabled]="false" label="tutu"></mmz-checkbox></td>
+      <td><mmz-checkbox size="medium" [disabled]="false"></mmz-checkbox></td>
       <td>{{data.payed ? 'Ano' : 'Ne'}}</td>
+      <td>
+        <span class="flex-row gap-base-half justify-center">
+          <mmz-button size="small">Editovat</mmz-button>
+          <mmz-button color="danger">Smazat</mmz-button>
+        </span>
+      </td>
     </tr>
   </table>
 </div>

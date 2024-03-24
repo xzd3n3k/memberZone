@@ -3,6 +3,7 @@ import {School} from "../../School";
 import {DatePipe, NgForOf} from "@angular/common";
 import {HeadingComponent} from "../heading/heading.component";
 import {CheckboxComponent} from "../checkbox/checkbox.component";
+import {ButtonComponent} from "../button/button.component";
 
 @Component({
   selector: 'mmz-schools-table',
@@ -11,7 +12,8 @@ import {CheckboxComponent} from "../checkbox/checkbox.component";
     NgForOf,
     DatePipe,
     HeadingComponent,
-    CheckboxComponent
+    CheckboxComponent,
+    ButtonComponent
   ],
   templateUrl: './schools-table.component.html',
   styleUrl: './schools-table.component.css'

@@ -4,12 +4,17 @@
   }
 
   table, td, th {
-    border: 1px solid;
+    border: 1px solid var(--color-grey);
     border-collapse: collapse;
   }
 
   td {
-    padding: 8px 16px;
+    padding: var(--padding-base-half) var(--padding-base);
     text-align: center;
+  }
+
+  th {
+    padding: var(--padding-base-half) var(--padding-base);
+    background-color: var(--color-grey-light);
   }
 }
