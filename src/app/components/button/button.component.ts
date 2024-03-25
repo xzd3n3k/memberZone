@@ -8,12 +8,11 @@ import {NgIf} from "@angular/common";
     NgIf
   ],
   templateUrl: './button.component.html',
-  styleUrl: './button.component.css'
+  styleUrl: './button.component.scss'
 })
 export class ButtonComponent {
   @Input() label?: string;
   @Input() color: 'primary' | 'secondary' | 'danger' | 'success' = 'primary';
-  @Input() transparent: boolean = false;
   @Input() size: 'small' | 'medium' | 'large' = 'small';
   @Input() disabled: boolean = false;
 

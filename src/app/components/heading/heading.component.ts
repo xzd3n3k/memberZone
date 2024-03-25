@@ -5,7 +5,7 @@ import {Component, Input} from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './heading.component.html',
-  styleUrl: './heading.component.css'
+  styleUrl: './heading.component.scss'
 })
 export class HeadingComponent {
   @Input() align: 'left' | 'right' | 'center' = 'center';

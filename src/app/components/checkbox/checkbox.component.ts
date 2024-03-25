@@ -5,7 +5,7 @@ import {ChangeDetectorRef, Component, Input} from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './checkbox.component.html',
-  styleUrl: './checkbox.component.css'
+  styleUrl: './checkbox.component.scss'
 })
 export class CheckboxComponent {
   @Input() label?: string;
