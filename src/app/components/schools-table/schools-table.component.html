@@ -17,11 +17,11 @@
       <td>{{data.address}}</td>
       <td>{{data.province}}</td>
       <td>{{data.email}}</td>
-      <td><mmz-checkbox size="medium" [disabled]="false"></mmz-checkbox></td>
+      <td><mmz-checkbox color="success" [checked]="data.active" size="medium" [disabled]="false"></mmz-checkbox></td>
       <td>{{data.payed ? 'Ano' : 'Ne'}}</td>
       <td>
         <span class="flex-row gap-base-half justify-center">
-          <mmz-button size="small">Editovat</mmz-button>
+          <mmz-button size="small" [routerLink]="['/edit', data.registration_number]">Editovat</mmz-button>
           <mmz-button color="danger">Smazat</mmz-button>
         </span>
       </td>
