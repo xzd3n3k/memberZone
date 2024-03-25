@@ -9,4 +9,9 @@ import {Component, Input} from '@angular/core';
 })
 export class TextInputComponent {
   @Input() size: 'small' | 'medium' | 'large' = 'small';
+
+  protected getSize(side: 'height' | 'width'): string {
+    return `var(--text-input-${side}-${this.size})`;
+  }
+
 }
