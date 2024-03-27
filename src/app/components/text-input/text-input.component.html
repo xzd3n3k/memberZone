@@ -1,3 +1,8 @@
 <div>
-  <input [style.height]="getSize('height')" [style.width]="getSize('width')" type="text">
+  <input
+    [style.height]="getSize('height')"
+    [style.width]="getSize('width')"
+    [placeholder]="placeholder"
+    (input)="onInput($event)"
+    type="text">
 </div>
