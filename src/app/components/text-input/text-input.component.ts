@@ -16,7 +16,7 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
   styleUrl: './text-input.component.scss'
 })
 export class TextInputComponent implements ControlValueAccessor{
-  @Input() size: 'small' | 'medium' | 'large' = 'small';
+  @Input() size: 'small' | 'medium' | 'large' = 'medium';
   @Input() label?: string;
   @Input() placeholder: string = '';
 
@@ -58,8 +58,8 @@ export class TextInputComponent implements ControlValueAccessor{
     this.disabled = disabled;
   }
 
-  protected getSize(side: 'height' | 'width'): string {
-    return `var(--text-input-${side}-${this.size})`;
+  protected getHeight(): string {
+    return `var(--text-input-height-${this.size})`;
   }
 
 }
