@@ -11,7 +11,7 @@ export class CheckboxComponent {
   @Input() label?: string;
   @Input() value?: string;
   @Input() color: 'primary' | 'secondary' | 'danger' | 'success' = 'primary';
-  @Input() size: 'small' | 'medium' | 'large' = 'small';
+  @Input() size: 'small' | 'medium' | 'large' = 'medium';
   @Input() labelPosition: 'left' | 'right' = 'left';
   @Input() checked: boolean = false;
   @Input() indeterminate: boolean = false;
