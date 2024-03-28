@@ -1,6 +1,6 @@
 <div>
   <div class="checkbox-container" (click)="toggleCheckbox()" [class.disabled]="disabled" [style.flex-direction]="(labelPosition === 'right' && label) ? 'row-reverse' : 'row'">
     <span class="checkbox-label">{{label}}</span>
-    <input class="{{color}}" [style.width]="getSize()" [style.height]="getSize()" type="checkbox" [indeterminate]="indeterminate" [checked]="checked">
+    <input class="{{color}}" [style.width]="getSize()" [style.height]="getSize()" type="checkbox" [(ngModel)]="checked">
   </div>
 </div>

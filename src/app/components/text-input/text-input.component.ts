@@ -1,10 +1,12 @@
 import {Component, Input} from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
+import {ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR} from "@angular/forms";
 
 @Component({
   selector: 'mmz-text-input',
   standalone: true,
-  imports: [],
+  imports: [
+    FormsModule
+  ],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

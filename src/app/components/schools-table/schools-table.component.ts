@@ -43,7 +43,7 @@ export class SchoolsTableComponent {
     },
     {
       registration_number: '122/24',
-      name: 'stredni neco skola',
+      name: 'stredni neco prvni',
       principal: 'baba jaga',
       phone: '123 456 789',
       address: 'nekde doma kde se vola',
@@ -54,7 +54,7 @@ export class SchoolsTableComponent {
     },
     {
       registration_number: '113/24',
-      name: 'stredni neco skola',
+      name: 'stredni druha skola',
       principal: 'baba jaga',
       phone: '123 456 789',
       address: 'nekde doma kde se vola',
@@ -65,7 +65,7 @@ export class SchoolsTableComponent {
     },
     {
       registration_number: '143/24',
-      name: 'stredni neco skola',
+      name: 'stredni vysoka skola',
       principal: 'baba jaga',
       phone: '123 456 789',
       address: 'nekde doma kde se vola',
@@ -76,7 +76,7 @@ export class SchoolsTableComponent {
     },
     {
       registration_number: '183/24',
-      name: 'stredni neco skola',
+      name: 'stredni nizka skola',
       principal: 'baba jaga',
       phone: '123 456 789',
       address: 'nekde doma kde se vola',
