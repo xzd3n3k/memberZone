@@ -22,12 +22,35 @@
     vertical-align: middle;
     color: var(--color-black-light);
 
+    //label {
+    //  height: 32px;
+    //  display: inline-flex !important;
+    //  position: relative;
+    //  align-items: center;
+    //  justify-content: flex-end;
+    //}
+
     label {
-      height: 32px;
-      display: inline-flex !important;
       position: relative;
+      display: inline-flex;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: right;
+      height: 32px;
+
+      width: 100%;
+      white-space: nowrap;
+      text-align: right;
+
+      &:after {
+        content: "";
+        margin-right: 6px;
+      }
+
+      span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
     }
 
     @include tv {
