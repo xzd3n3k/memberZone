@@ -1,7 +1,47 @@
 <div>
   <mmz-heading [size]="25" align="left">Člen CTI - {{selected?.name}}</mmz-heading>
-  <span class="flex-row gap-base align-center">
-    <label>Registrační číslo</label>
-    <mmz-text-input size="medium"></mmz-text-input>
-  </span>
+  <div>
+    <div>
+      <mmz-form-field label="Registrační číslo">
+        <mmz-text-input [(ngModel)]="selected!.registration_number"></mmz-text-input>
+      </mmz-form-field>
+      <mmz-form-field label="Název školy">
+        <mmz-text-input [(ngModel)]="selected!.name"></mmz-text-input>
+      </mmz-form-field>
+      <mmz-form-field label="Ředitel">
+        <mmz-text-input [(ngModel)]="selected!.principal"></mmz-text-input>
+      </mmz-form-field>
+      <mmz-form-field label="Telefon">
+        <mmz-text-input [(ngModel)]="selected!.phone"></mmz-text-input>
+      </mmz-form-field>
+      <mmz-form-field label="Ulice">
+        <mmz-text-input [(ngModel)]="selected!.street"></mmz-text-input>
+      </mmz-form-field>
+      <mmz-form-field label="Číslo popisné">
+        <mmz-text-input [(ngModel)]="selected!.post_code"></mmz-text-input>
+      </mmz-form-field>
+      <mmz-form-field label="Město">
+        <mmz-text-input [(ngModel)]="selected!.city"></mmz-text-input>
+      </mmz-form-field>
+      <mmz-form-field label="PSČ">
+        <mmz-text-input [(ngModel)]="selected!.zip_code"></mmz-text-input>
+      </mmz-form-field>
+      <mmz-form-field label="Stát">
+        <mmz-text-input [(ngModel)]="selected!.country"></mmz-text-input>
+      </mmz-form-field>
+      <mmz-form-field label="Kraj">
+        <mmz-text-input [(ngModel)]="selected!.province"></mmz-text-input>
+      </mmz-form-field>
+      <mmz-form-field label="Email">
+        <mmz-text-input [(ngModel)]="selected!.email"></mmz-text-input>
+      </mmz-form-field>
+      <mmz-form-field label="Aktivní">
+        <mmz-checkbox [(ngModel)]="selected!.active"></mmz-checkbox>
+      </mmz-form-field>
+      <mmz-form-field label="Uhrazeno">
+        <mmz-checkbox [(ngModel)]="selected!.payed"></mmz-checkbox>
+      </mmz-form-field>
+    </div>
+    <mmz-button (click)="onFormSubmit()">{{buttonText}}</mmz-button>
+  </div>
 </div>

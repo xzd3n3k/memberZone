@@ -3,7 +3,11 @@ export interface School {
   name: string;
   principal: string;
   phone: string;
-  address: string;
+  street: string;
+  post_code: string;
+  zip_code: string;
+  city: string;
+  country: string;
   province: string;
   email: string;
   active: boolean;

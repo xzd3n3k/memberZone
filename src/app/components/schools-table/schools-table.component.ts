@@ -28,62 +28,62 @@ export class SchoolsTableComponent {
     const date = new Date();
     return date.getFullYear();
   }
-
-  data: School[] = [
-    {
-      registration_number: '123/24',
-      name: 'stredni neco skola',
-      principal: 'baba jaga',
-      phone: '123 456 789',
-      address: 'nekde doma kde se vola',
-      province: 'jihostredomoravsky',
-      email: 'redilka@skoly.eu',
-      active: true,
-      payed: true
-    },
-    {
-      registration_number: '122/24',
-      name: 'stredni neco prvni',
-      principal: 'baba jaga',
-      phone: '123 456 789',
-      address: 'nekde doma kde se vola',
-      province: 'jihostredomoravsky',
-      email: 'redilka@skoly.eu',
-      active: false,
-      payed: true
-    },
-    {
-      registration_number: '113/24',
-      name: 'stredni druha skola',
-      principal: 'baba jaga',
-      phone: '123 456 789',
-      address: 'nekde doma kde se vola',
-      province: 'jihostredomoravsky',
-      email: 'redilka@skoly.eu',
-      active: true,
-      payed: true
-    },
-    {
-      registration_number: '143/24',
-      name: 'stredni vysoka skola',
-      principal: 'baba jaga',
-      phone: '123 456 789',
-      address: 'nekde doma kde se vola',
-      province: 'jihostredomoravsky',
-      email: 'redilka@skoly.eu',
-      active: true,
-      payed: true
-    },
-    {
-      registration_number: '183/24',
-      name: 'stredni nizka skola',
-      principal: 'baba jaga',
-      phone: '123 456 789',
-      address: 'nekde doma kde se vola',
-      province: 'jihostredomoravsky',
-      email: 'redilka@skoly.eu',
-      active: true,
-      payed: true
-    }
-  ];
+  data: School[] = [];
+  // data: School[] = [
+  //   {
+  //     registration_number: '123/24',
+  //     name: 'stredni neco skola',
+  //     principal: 'baba jaga',
+  //     phone: '123 456 789',
+  //     address: 'nekde doma kde se vola',
+  //     province: 'jihostredomoravsky',
+  //     email: 'redilka@skoly.eu',
+  //     active: true,
+  //     payed: true
+  //   },
+  //   {
+  //     registration_number: '122/24',
+  //     name: 'stredni neco prvni',
+  //     principal: 'baba jaga',
+  //     phone: '123 456 789',
+  //     address: 'nekde doma kde se vola',
+  //     province: 'jihostredomoravsky',
+  //     email: 'redilka@skoly.eu',
+  //     active: false,
+  //     payed: true
+  //   },
+  //   {
+  //     registration_number: '113/24',
+  //     name: 'stredni druha skola',
+  //     principal: 'baba jaga',
+  //     phone: '123 456 789',
+  //     address: 'nekde doma kde se vola',
+  //     province: 'jihostredomoravsky',
+  //     email: 'redilka@skoly.eu',
+  //     active: true,
+  //     payed: true
+  //   },
+  //   {
+  //     registration_number: '143/24',
+  //     name: 'stredni vysoka skola',
+  //     principal: 'baba jaga',
+  //     phone: '123 456 789',
+  //     address: 'nekde doma kde se vola',
+  //     province: 'jihostredomoravsky',
+  //     email: 'redilka@skoly.eu',
+  //     active: true,
+  //     payed: true
+  //   },
+  //   {
+  //     registration_number: '183/24',
+  //     name: 'stredni nizka skola',
+  //     principal: 'baba jaga',
+  //     phone: '123 456 789',
+  //     address: 'nekde doma kde se vola',
+  //     province: 'jihostredomoravsky',
+  //     email: 'redilka@skoly.eu',
+  //     active: true,
+  //     payed: true
+  //   }
+  // ];
 }
