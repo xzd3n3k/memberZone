@@ -24,10 +24,10 @@ import {take} from "rxjs";
     ButtonComponent,
     RouterLink
   ],
-  templateUrl: './edit.component.html',
-  styleUrl: './edit.component.css'
+  templateUrl: './school-form.component.html',
+  styleUrl: './school-form.component.css'
 })
-export class EditComponent implements OnInit {
+export class SchoolFormComponent implements OnInit {
 
   private destroyRef = inject(DestroyRef);
   private apiService: ApiService = inject(ApiService);
