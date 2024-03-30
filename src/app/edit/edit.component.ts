@@ -73,8 +73,17 @@ export class EditComponent implements OnInit {
   }
 
   protected onFormSubmit() {
-    this.apiService.getToken().pipe(take(1)).subscribe((token: string) => {
-      this.apiService.createSchool(this.selected!).pipe(takeUntilDestroyed(this.destroyRef)).subscribe(value => console.log(value));
-    });
+    // TODO xzd3n3k someday make csrf work
+    // this.apiService.getToken().pipe(take(1)).subscribe((token: string) => {
+    //   this.apiService.createSchool(this.selected!).pipe(takeUntilDestroyed(this.destroyRef)).subscribe(value => console.log(value));
+    // });
+
+    this.apiService.createSchool(this.selected!)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(value => {
+        if (value.message !== 'School created successfully!') {
+          console.warn('Some fields are empty!');
+        }
+      });
   }
 }
