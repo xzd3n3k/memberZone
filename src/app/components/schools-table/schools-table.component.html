@@ -17,7 +17,7 @@
       <td>{{data.street}}, {{data.post_code}}<br>{{data.city}} {{data.zip_code}}</td>
       <td>{{data.province}}</td>
       <td>{{data.email}}</td>
-      <td><mmz-checkbox color="success" [checked]="data.active" size="medium"></mmz-checkbox></td>
+      <td><mmz-checkbox color="success" (change)="updateSchool(data.registration_number, data)" [(ngModel)]="data.active" size="medium"></mmz-checkbox></td>
       <td>{{data.payed ? 'Ano' : 'Ne'}}</td>
       <td>
         <span class="flex-row gap-base-half justify-center">

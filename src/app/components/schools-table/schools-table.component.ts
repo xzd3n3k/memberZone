@@ -7,6 +7,7 @@ import {ButtonComponent} from "../button/button.component";
 import {RouterLink} from "@angular/router";
 import {ApiService} from "../../api.service";
 import {take} from "rxjs";
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'mmz-schools-table',
@@ -17,7 +18,8 @@ import {take} from "rxjs";
     HeadingComponent,
     CheckboxComponent,
     ButtonComponent,
-    RouterLink
+    RouterLink,
+    FormsModule
   ],
   templateUrl: './schools-table.component.html',
   styleUrl: './schools-table.component.scss'
@@ -40,6 +42,17 @@ export class SchoolsTableComponent {
     this.apiService.getSchools().subscribe(datas => {
       this.data = datas;
     })
+  }
+
+  protected updateSchool(id: string, school: School) {
+    this.apiService.updateSchool(id, school)
+      .pipe(take(1))
+      .subscribe((value: any) => {
+        if (value.message !== 'School update successfully!') {
+          console.warn('Some fields are empty!');
+          console.warn(value);
+        }
+      })
   }
 
   protected deleteSchool(registration_number: string) {
