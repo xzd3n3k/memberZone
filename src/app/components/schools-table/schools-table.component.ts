@@ -5,6 +5,8 @@ import {HeadingComponent} from "../heading/heading.component";
 import {CheckboxComponent} from "../checkbox/checkbox.component";
 import {ButtonComponent} from "../button/button.component";
 import {RouterLink} from "@angular/router";
+import {ApiService} from "../../api.service";
+import {take} from "rxjs";
 
 @Component({
   selector: 'mmz-schools-table',
@@ -23,67 +25,32 @@ import {RouterLink} from "@angular/router";
 export class SchoolsTableComponent {
 
   protected readonly Date = Date;
+  protected data: School[] = [];
+
+  constructor(private apiService: ApiService) {
+    this.loadData();
+  }
 
   get currentYear() {
     const date = new Date();
     return date.getFullYear();
   }
-  data: School[] = [];
-  // data: School[] = [
-  //   {
-  //     registration_number: '123/24',
-  //     name: 'stredni neco skola',
-  //     principal: 'baba jaga',
-  //     phone: '123 456 789',
-  //     address: 'nekde doma kde se vola',
-  //     province: 'jihostredomoravsky',
-  //     email: 'redilka@skoly.eu',
-  //     active: true,
-  //     payed: true
-  //   },
-  //   {
-  //     registration_number: '122/24',
-  //     name: 'stredni neco prvni',
-  //     principal: 'baba jaga',
-  //     phone: '123 456 789',
-  //     address: 'nekde doma kde se vola',
-  //     province: 'jihostredomoravsky',
-  //     email: 'redilka@skoly.eu',
-  //     active: false,
-  //     payed: true
-  //   },
-  //   {
-  //     registration_number: '113/24',
-  //     name: 'stredni druha skola',
-  //     principal: 'baba jaga',
-  //     phone: '123 456 789',
-  //     address: 'nekde doma kde se vola',
-  //     province: 'jihostredomoravsky',
-  //     email: 'redilka@skoly.eu',
-  //     active: true,
-  //     payed: true
-  //   },
-  //   {
-  //     registration_number: '143/24',
-  //     name: 'stredni vysoka skola',
-  //     principal: 'baba jaga',
-  //     phone: '123 456 789',
-  //     address: 'nekde doma kde se vola',
-  //     province: 'jihostredomoravsky',
-  //     email: 'redilka@skoly.eu',
-  //     active: true,
-  //     payed: true
-  //   },
-  //   {
-  //     registration_number: '183/24',
-  //     name: 'stredni nizka skola',
-  //     principal: 'baba jaga',
-  //     phone: '123 456 789',
-  //     address: 'nekde doma kde se vola',
-  //     province: 'jihostredomoravsky',
-  //     email: 'redilka@skoly.eu',
-  //     active: true,
-  //     payed: true
-  //   }
-  // ];
+
+  private loadData() {
+    this.apiService.getSchools().subscribe(datas => {
+      this.data = datas;
+    })
+  }
+
+  protected deleteSchool(registration_number: string) {
+    this.apiService.deleteSchool(registration_number)
+      .pipe(take(1))
+      .subscribe((value: any) => {
+        if (value.message !== 'School has been successfully deleted!') {
+          console.log(value);
+        } else {
+          this.loadData();
+        }
+      })
+  }
 }

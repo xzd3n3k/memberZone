@@ -22,7 +22,7 @@
       <td>
         <span class="flex-row gap-base-half justify-center">
           <mmz-button size="small" [routerLink]="['/edit', data.registration_number]">Editovat</mmz-button>
-          <mmz-button color="danger">Smazat</mmz-button>
+          <mmz-button color="danger" (click)="deleteSchool(data.registration_number)">Smazat</mmz-button>
         </span>
       </td>
     </tr>
