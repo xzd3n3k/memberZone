@@ -20,11 +20,8 @@ import {NgClass, NgForOf} from "@angular/common";
 })
 export default class TabsComponent implements AfterContentInit {
   @ContentChildren(TabComponent) tabs!: QueryList<TabComponent>;
-  constructor() {
-    console.log(this.tabs);
-  }
+
   ngAfterContentInit() {
-    console.log(this.tabs);
     const activeTabs = this.tabs.filter(tab => tab.active);
 
     if (activeTabs.length === 0) {
