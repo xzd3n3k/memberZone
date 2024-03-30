@@ -22,7 +22,7 @@
           <mmz-checkbox
             color="success"
             size="medium"
-            (change)="updateSchool(data.registration_number, data)"
+            (change)="updateSchool(data.id!, data)"
             [(ngModel)]="data.active"
           >
           </mmz-checkbox>
@@ -31,10 +31,11 @@
       <td>{{data.payed ? 'Ano' : 'Ne'}}</td>
       <td>
         <span class="flex-row gap-base-half justify-center">
-          <mmz-button size="small" [routerLink]="['/edit', data.registration_number]">Editovat</mmz-button>
-          <mmz-button color="danger" (click)="deleteSchool(data.registration_number)">Smazat</mmz-button>
+          <mmz-button size="small" [routerLink]="['/edit', data.id]">Editovat</mmz-button>
+          <mmz-button color="danger" (click)="deleteSchool(data.id!)">Smazat</mmz-button>
         </span>
       </td>
     </tr>
   </table>
+  <img *ngIf="data.length == 0" [src]="'assets/EmptyStateWText.svg'" class="emptyBackground" alt="empty">
 </div>

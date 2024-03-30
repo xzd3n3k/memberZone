@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {School} from "../../School";
-import {DatePipe, NgForOf} from "@angular/common";
+import {DatePipe, NgForOf, NgIf} from "@angular/common";
 import {HeadingComponent} from "../heading/heading.component";
 import {CheckboxComponent} from "../checkbox/checkbox.component";
 import {ButtonComponent} from "../button/button.component";
@@ -19,7 +19,8 @@ import {FormsModule} from "@angular/forms";
     CheckboxComponent,
     ButtonComponent,
     RouterLink,
-    FormsModule
+    FormsModule,
+    NgIf
   ],
   templateUrl: './schools-table.component.html',
   styleUrl: './schools-table.component.scss'
@@ -44,7 +45,7 @@ export class SchoolsTableComponent {
     })
   }
 
-  protected updateSchool(id: string, school: School) {
+  protected updateSchool(id: number, school: School) {
     this.apiService.updateSchool(id, school)
       .pipe(take(1))
       .subscribe((value: any) => {
@@ -55,8 +56,8 @@ export class SchoolsTableComponent {
       })
   }
 
-  protected deleteSchool(registration_number: string) {
-    this.apiService.deleteSchool(registration_number)
+  protected deleteSchool(id: number) {
+    this.apiService.deleteSchool(id)
       .pipe(take(1))
       .subscribe((value: any) => {
         if (value.message !== 'School has been successfully deleted!') {

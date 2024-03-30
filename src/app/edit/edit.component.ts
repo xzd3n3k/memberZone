@@ -33,14 +33,8 @@ export class EditComponent implements OnInit {
   private apiService: ApiService = inject(ApiService);
 
   buttonText!: string;
-  id?: string | null;
+  id?: number;
   selected?: School;
-  schoolForm = new FormGroup({
-    registrationNumber: new FormControl(),
-    name: new FormControl(),
-    principal: new FormControl(),
-    phone: new FormControl(),
-  });
 
   constructor(private route: ActivatedRoute, private router: Router) {
 
@@ -60,7 +54,7 @@ export class EditComponent implements OnInit {
       payed: false
     }
 
-    this.id = this.route.snapshot.paramMap.get('id');
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
     if (!this.id) {
       this.buttonText = 'Vytvořit';
     } else {
@@ -68,7 +62,6 @@ export class EditComponent implements OnInit {
         .pipe(take(1))
         .subscribe(school => {
           this.selected = school;
-          console.log(school);
         })
       this.buttonText = 'Uložit';
     }

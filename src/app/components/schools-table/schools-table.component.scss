@@ -17,4 +17,9 @@
     padding: var(--padding-base-half) var(--padding-base);
     background-color: var(--color-grey-light);
   }
+
+  .emptyBackground {
+    width: 100vw;
+    height: 50vh;
+  }
 }

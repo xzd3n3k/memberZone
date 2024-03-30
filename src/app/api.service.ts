@@ -16,11 +16,11 @@ export class ApiService {
     return this.http.get<Array<School>>('http://127.0.0.1:8000/get-schools');
   }
 
-  getSchool(id: string): Observable<School> {
+  getSchool(id: number): Observable<School> {
     return this.http.get<School>(`http://127.0.0.1:8000/get-school/${id}`);
   }
 
-  updateSchool(id: string, school: School) {
+  updateSchool(id: number, school: School) {
     return this.http.post<any>(`http://127.0.0.1:8000/update-school/${id}`, school)
   }
 
@@ -28,7 +28,7 @@ export class ApiService {
     return this.http.post<any>('http://127.0.0.1:8000/create-school', school);
   }
 
-  deleteSchool(registration_number: string) {
-    return this.http.delete(`http://127.0.0.1:8000/delete-school/${registration_number}`);
+  deleteSchool(id: number) {
+    return this.http.delete(`http://127.0.0.1:8000/delete-school/${id}`);
   }
 }

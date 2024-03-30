@@ -1,4 +1,5 @@
 export interface School {
+  id?: number;
   registration_number: string;
   name: string;
   principal: string;
