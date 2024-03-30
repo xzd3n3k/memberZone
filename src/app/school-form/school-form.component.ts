@@ -12,7 +12,7 @@ import {ButtonComponent} from "../components/button/button.component";
 import {take} from "rxjs";
 
 @Component({
-  selector: 'mmz-edit',
+  selector: 'mmz-school-form',
   standalone: true,
   imports: [
     TextInputComponent,

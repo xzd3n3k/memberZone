@@ -31,7 +31,7 @@
       <td>{{data.payed ? 'Ano' : 'Ne'}}</td>
       <td>
         <span class="flex-row gap-base-half justify-center">
-          <mmz-button size="small" [routerLink]="['/edit', data.id]">Editovat</mmz-button>
+          <mmz-button size="small" [routerLink]="['/school-form', data.id]">Editovat</mmz-button>
           <mmz-button color="danger" (click)="deleteSchool(data.id!)">Smazat</mmz-button>
         </span>
       </td>
