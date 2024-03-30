@@ -9,7 +9,7 @@
       <th>Email</th>
       <th>Aktivní</th>
       <th>Uhrazeno</th>
-      <th><mmz-button size="large" icon="plus"></mmz-button></th>
+      <th><mmz-button size="large" icon="plus" [routerLink]="['/new']"></mmz-button></th>
     </tr>
     <tr class="table-row" *ngFor="let data of data; index as i">
       <td>{{data.registration_number}}</td>
