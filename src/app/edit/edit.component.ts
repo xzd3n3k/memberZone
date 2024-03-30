@@ -1,5 +1,5 @@
 import {Component, DestroyRef, inject, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {School} from "../School";
 import {TextInputComponent} from "../components/text-input/text-input.component";
 import {HeadingComponent} from "../components/heading/heading.component";
@@ -40,7 +40,7 @@ export class EditComponent implements OnInit {
     phone: new FormControl(),
   });
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private router: Router) {
     this.id = this.route.snapshot.paramMap.get('id');
     if (!this.id) {
       this.selected = {
@@ -82,7 +82,9 @@ export class EditComponent implements OnInit {
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(value => {
         if (value.message !== 'School created successfully!') {
-          console.warn('Some fields are empty!');
+          console.warn('Some fields are empty!'); // TODO xzd3n3k toasts
+        } else {
+          this.router.navigateByUrl('/');
         }
       });
   }
