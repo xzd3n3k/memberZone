@@ -1,5 +1,5 @@
 import {Component, DestroyRef, inject, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, Router, RouterLink} from "@angular/router";
 import {School} from "../School";
 import {TextInputComponent} from "../components/text-input/text-input.component";
 import {HeadingComponent} from "../components/heading/heading.component";
@@ -21,7 +21,8 @@ import {take} from "rxjs";
     CheckboxComponent,
     FormsModule,
     ReactiveFormsModule,
-    ButtonComponent
+    ButtonComponent,
+    RouterLink
   ],
   templateUrl: './edit.component.html',
   styleUrl: './edit.component.css'
