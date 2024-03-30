@@ -3,7 +3,7 @@
   list-style-type: none;
   padding: 0;
   margin: 0;
-  background-color: var(--color-grey-light);
+  background-color: var(--color-blue-light);
   width: 100%;
 }
 
@@ -21,5 +21,5 @@
 
 .tabs-container .tab.active {
   color: white;
-  background-color: var(--color-grey);
+  background-color: var(--color-blue);
 }
