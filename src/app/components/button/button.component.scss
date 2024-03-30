@@ -51,10 +51,21 @@
     }
   }
 
+  .transparent {
+    --button-color: var(--color-grey);
+    --button-text-color: transparent;
+    &:hover {
+      --button-color: var(--color-grey-light);
+    }
+  }
+
   .ico-button {
-    padding: 0;
+    transition-duration: 500ms;
+    padding: 2px;
     img {
-      filter: invert(94%) sepia(6%) saturate(23%) hue-rotate(342deg) brightness(106%) contrast(101%);
+      height: 100%;
+      width: 100%;
+      //filter: invert(94%) sepia(6%) saturate(23%) hue-rotate(342deg) brightness(106%) contrast(101%);
     }
   }
 }

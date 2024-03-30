@@ -13,7 +13,7 @@ import {NgIf} from "@angular/common";
 export class ButtonComponent implements OnInit{
   @Input() label?: string;
   @Input() icon?: string;
-  @Input() color: 'primary' | 'secondary' | 'danger' | 'success' = 'primary';
+  @Input() color: 'primary' | 'secondary' | 'danger' | 'success' | 'transparent' = 'primary';
   @Input() size: 'small' | 'medium' | 'large' = 'small';
   @Input() disabled: boolean = false;
 

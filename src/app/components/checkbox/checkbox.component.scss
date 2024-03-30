@@ -1,5 +1,6 @@
 :host {
   .checkbox-container {
+    cursor: pointer;
     height: 32px;
     width: 32px;
     display: flex;
@@ -12,6 +13,7 @@
 
   input {
     accent-color: var(--checkbox-color);
+    cursor: pointer;
   }
 
   .primary {
