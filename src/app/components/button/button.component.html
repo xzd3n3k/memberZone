@@ -1,6 +1,9 @@
-<div [class.disabled]="disabled" class="{{color}}">
-  <button [style.font-size]="getSize()" *ngIf="!label">
+<div [class.disabled]="disabled" class="{{color}} button-wrapper">
+  <button [style.font-size]="getSize()" *ngIf="!label && !icon">
     <ng-content></ng-content>
   </button>
-  <button [style.font-size]="getSize()" *ngIf="label">{{label}}</button>
+  <button [style.font-size]="getSize()" *ngIf="label && !icon">{{label}}</button>
+  <button *ngIf="icon" [style.height]="getSize()" [style.width]="getSize()" class="ico-button">
+    <img [src]="iconPath" alt="icon" [style.height]="getSize()" [style.width]="getSize()">
+  </button>
 </div>

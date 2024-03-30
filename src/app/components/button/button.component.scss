@@ -1,5 +1,11 @@
 :host {
+  display: inline-flex;
+  .button-wrapper {
+    display: inline-flex;
+  }
+
   button {
+    cursor: pointer;
     border: 0;
     box-shadow: 0 0 var(--box-shadow-base) var(--color-black-light);
     padding: var(--padding-base-half) var(--padding-base);
@@ -42,6 +48,13 @@
     --button-text-color: var(--color-white);
     &:hover {
       --button-color: var(--color-success-hover);
+    }
+  }
+
+  .ico-button {
+    padding: 0;
+    img {
+      filter: invert(94%) sepia(6%) saturate(23%) hue-rotate(342deg) brightness(106%) contrast(101%);
     }
   }
 }
