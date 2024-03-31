@@ -3,26 +3,30 @@
   <table>
     <tr>
       <th>Registrační číslo</th>
-      <th>Název školy, ředitel školy, telefon</th>
+      <th>Společnost</th>
       <th>Adresa</th>
       <th>Kraj</th>
       <th>Email</th>
+      <th>Kontaktní osoba</th>
+      <th>Telefon</th>
       <th>Aktivní</th>
       <th>Uhrazeno</th>
-      <th><mmz-button color="transparent" size="large" icon="plus" [routerLink]="['/school-form']"></mmz-button></th>
+      <th><mmz-button color="transparent" size="large" icon="plus" [routerLink]="['/juridical-person-form']"></mmz-button></th>
     </tr>
     <tr class="table-row" *ngFor="let data of data; index as i">
       <td>{{data.registration_number}}</td>
-      <td>{{data.name}} <br> {{data.principal}} <br> {{data.phone}}</td>
+      <td>{{data.company}}</td>
       <td>{{data.street}}, {{data.post_code}}<br>{{data.city}} {{data.zip_code}}</td>
       <td>{{data.province}}</td>
       <td>{{data.email}}</td>
+      <td>{{data.contact_person}}</td>
+      <td>{{data.phone}}</td>
       <td>
         <span class="inline-flex">
           <mmz-checkbox
             color="success"
             size="medium"
-            (change)="updateSchool(data.id!, data)"
+            (change)="updatePerson(data.id!, data)"
             [(ngModel)]="data.active"
           >
           </mmz-checkbox>
@@ -31,8 +35,8 @@
       <td>{{data.payed ? 'Ano' : 'Ne'}}</td>
       <td>
         <span class="flex-row gap-base-half justify-center">
-          <mmz-button size="small" [routerLink]="['/school-form', data.id]">Editovat</mmz-button>
-          <mmz-button color="danger" (click)="deleteSchool(data.id!)">Smazat</mmz-button>
+          <mmz-button size="small" [routerLink]="['/juridical-person-form', data.id]">Editovat</mmz-button>
+          <mmz-button color="danger" (click)="deletePerson(data.id!)">Smazat</mmz-button>
         </span>
       </td>
     </tr>
