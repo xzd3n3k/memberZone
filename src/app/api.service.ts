@@ -37,8 +37,16 @@ export class ApiService {
     return this.http.get<Array<JuridicalPerson>>('http://127.0.0.1:8000/get-juridical-persons');
   }
 
+  getJuridicalPerson(id: number) {
+    return this.http.get<JuridicalPerson>(`http://127.0.0.1:8000/get-juridical-person/${id}`);
+  }
+
   updateJuridicalPerson(id: number, person: JuridicalPerson) {
     return this.http.post<any>(`http://127.0.0.1:8000/update-juridical-person/${id}`, person);
+  }
+
+  createJuridicalPerson(person: JuridicalPerson) {
+    return this.http.post<any>('http://127.0.0.1:8000/create-juridical-person', person);
   }
 
   deleteJuridicalPerson(id: number) {
