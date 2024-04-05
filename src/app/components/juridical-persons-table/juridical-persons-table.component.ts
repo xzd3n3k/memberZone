@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {ButtonComponent} from "../button/button.component";
 import {CheckboxComponent} from "../checkbox/checkbox.component";
 import {HeadingComponent} from "../heading/heading.component";
-import {NgForOf, NgIf} from "@angular/common";
+import {AsyncPipe, NgForOf, NgIf} from "@angular/common";
 import {ApiService} from "../../api.service";
 import {take} from "rxjs";
 import {RouterLink} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import {JuridicalPerson} from "../../JuridicalPerson";
+import {LoadingService} from "../../loading.service";
+import {LoadingSpinnerComponent} from "../loading-spinner/loading-spinner.component";
 
 @Component({
   selector: 'mmz-juridical-persons-table',
@@ -19,16 +21,21 @@ import {JuridicalPerson} from "../../JuridicalPerson";
     NgForOf,
     NgIf,
     RouterLink,
-    FormsModule
+    FormsModule,
+    LoadingSpinnerComponent,
+    AsyncPipe
   ],
   templateUrl: './juridical-persons-table.component.html',
   styleUrl: './juridical-persons-table.component.scss'
 })
 export class JuridicalPersonsTableComponent {
+  private loadingService = inject(LoadingService);
+  protected isLoading$ = this.loadingService.loading$;
   protected readonly Date = Date;
   protected data: JuridicalPerson[] = [];
 
   constructor(private apiService: ApiService) {
+    this.loadingService.show();
     this.loadData();
   }
 
@@ -40,6 +47,7 @@ export class JuridicalPersonsTableComponent {
   private loadData() {
     this.apiService.getJuridicalPersons().subscribe(datas => {
       this.data = datas;
+      this.loadingService.hide();
     })
   }
 
