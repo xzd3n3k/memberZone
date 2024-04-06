@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {School} from "../../School";
-import {DatePipe, NgForOf, NgIf} from "@angular/common";
+import {AsyncPipe, DatePipe, NgForOf, NgIf} from "@angular/common";
 import {HeadingComponent} from "../heading/heading.component";
 import {CheckboxComponent} from "../checkbox/checkbox.component";
 import {ButtonComponent} from "../button/button.component";
@@ -8,6 +8,8 @@ import {RouterLink} from "@angular/router";
 import {ApiService} from "../../api.service";
 import {take} from "rxjs";
 import {FormsModule} from "@angular/forms";
+import {LoadingSpinnerComponent} from "../loading-spinner/loading-spinner.component";
+import {LoadingService} from "../../loading.service";
 
 @Component({
   selector: 'mmz-schools-table',
@@ -20,17 +22,22 @@ import {FormsModule} from "@angular/forms";
     ButtonComponent,
     RouterLink,
     FormsModule,
-    NgIf
+    NgIf,
+    AsyncPipe,
+    LoadingSpinnerComponent
   ],
   templateUrl: './schools-table.component.html',
   styleUrl: './schools-table.component.scss'
 })
 export class SchoolsTableComponent {
 
+  private loadingService = inject(LoadingService);
+  protected isLoading$ = this.loadingService.loading$;
   protected readonly Date = Date;
   protected data: School[] = [];
 
   constructor(private apiService: ApiService) {
+    this.loadingService.show();
     this.loadData();
   }
 
@@ -42,6 +49,7 @@ export class SchoolsTableComponent {
   private loadData() {
     this.apiService.getSchools().subscribe(datas => {
       this.data = datas;
+      this.loadingService.hide();
     })
   }
 

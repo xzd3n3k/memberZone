@@ -1,4 +1,4 @@
-<div class="table-container">
+<div class="table-container" *ngIf="!(isLoading$ | async)">
   <mmz-heading>Členové Cechu topenářů a instalatérů České republiky, z.s. Rok {{ currentYear }}</mmz-heading>
   <table>
     <tr>
@@ -39,3 +39,4 @@
   </table>
   <img *ngIf="data.length == 0" [src]="'assets/EmptyStateWText.svg'" class="emptyBackground" alt="empty">
 </div>
+<mmz-loading-spinner *ngIf="isLoading$ | async"></mmz-loading-spinner>
