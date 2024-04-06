@@ -3,6 +3,8 @@ import {SchoolsTableComponent} from "../components/schools-table/schools-table.c
 import TabsComponent from "../components/tabs/tabs.component";
 import TabComponent from "../components/tabs/tab.component";
 import {JuridicalPersonsTableComponent} from "../components/juridical-persons-table/juridical-persons-table.component";
+import {SidenavComponent} from "../components/sidenav/sidenav.component";
+import {RouterOutlet} from "@angular/router";
 
 @Component({
   selector: 'mmz-main-menu',
@@ -11,7 +13,9 @@ import {JuridicalPersonsTableComponent} from "../components/juridical-persons-ta
     SchoolsTableComponent,
     TabsComponent,
     TabComponent,
-    JuridicalPersonsTableComponent
+    JuridicalPersonsTableComponent,
+    SidenavComponent,
+    RouterOutlet
   ],
   templateUrl: './main-menu.component.html',
   styleUrl: './main-menu.component.css'
