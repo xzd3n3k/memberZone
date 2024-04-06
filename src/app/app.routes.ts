@@ -6,7 +6,32 @@ import {JuridicalPersonFormComponent} from "./juridical-person-form/juridical-pe
 
 export const routes: Routes = [
   {'path': '', redirectTo: '/home', pathMatch: 'full'},
-  {'path': 'home', component: MainMenuComponent},
+  {
+    'path': 'schools',
+    loadChildren: () => import('./components/schools-table/schools-table.routes')
+      .then(r => r.routes)
+  },
+  {
+    path: 'juridical-persons',
+    loadChildren: () => import('./components/juridical-persons-table/juridical-persons-table.routes')
+      .then(r => r.routes)
+  },
+  {
+    'path': 'home',
+    component: MainMenuComponent,
+    children:[
+      {
+        'path': 'schools',
+        loadChildren: () => import('./components/schools-table/schools-table.routes')
+          .then(r => r.routes)
+      },
+      {
+        path: 'juridical-persons',
+        loadChildren: () => import('./components/juridical-persons-table/juridical-persons-table.routes')
+          .then(r => r.routes)
+      },
+    ]
+  },
   {'path': 'school-form', component: SchoolFormComponent},
   {'path': 'school-form/:id', component: SchoolFormComponent},
   {'path': 'juridical-person-form', component: JuridicalPersonFormComponent},
