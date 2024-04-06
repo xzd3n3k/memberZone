@@ -10,6 +10,7 @@ import {ApiService} from "../api.service";
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 import {ButtonComponent} from "../components/button/button.component";
 import {take} from "rxjs";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'mmz-school-form',
@@ -29,6 +30,7 @@ import {take} from "rxjs";
 })
 export class SchoolFormComponent implements OnInit {
 
+  protected locationService = inject(Location);
   private destroyRef = inject(DestroyRef);
   private apiService: ApiService = inject(ApiService);
 

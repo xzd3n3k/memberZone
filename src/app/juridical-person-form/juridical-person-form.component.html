@@ -43,7 +43,7 @@
       </mmz-form-field>
     </div>
     <span class="flex-row justify-space-between">
-      <mmz-button [routerLink]="['/']" color="secondary">Zpět</mmz-button>
+      <mmz-button (click)="locationService.back()" color="secondary">Zpět</mmz-button>
       <mmz-button (click)="onFormSubmit()">{{buttonText}}</mmz-button>
     </span>
   </div>

@@ -9,6 +9,7 @@ import {ActivatedRoute, Router, RouterLink} from "@angular/router";
 import {take} from "rxjs";
 import {JuridicalPerson} from "../JuridicalPerson";
 import {FormsModule} from "@angular/forms";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'mmz-juridical-person-form',
@@ -27,6 +28,7 @@ import {FormsModule} from "@angular/forms";
 })
 export class JuridicalPersonFormComponent implements OnInit {
 
+  protected locationService = inject(Location);
   private destroyRef = inject(DestroyRef);
   private apiService: ApiService = inject(ApiService);
 
