@@ -1,0 +1,52 @@
+<div class="table-container" *ngIf="!(isLoading$ | async)">
+  <mmz-heading>Členové Cechu topenářů a instalatérů České republiky, z.s. Rok {{ currentYear }}</mmz-heading>
+  <table>
+    <tr>
+      <th>Registrační číslo</th>
+      <th>IČO</th>
+      <th>Titul</th>
+      <th>Jméno</th>
+      <th>Adresa</th>
+      <th>Kraj</th>
+      <th>Email</th>
+      <th>Telefon</th>
+      <th>ARES</th>
+      <th>Předmět podnikání</th>
+      <th>Aktivní</th>
+      <th>Uhrazeno</th>
+      <th><mmz-button color="transparent" size="large" icon="plus" [routerLink]="['/physical-person-form']"></mmz-button></th>
+    </tr>
+    <tr class="table-row" *ngFor="let data of data; index as i">
+      <td>{{data.registration_number}}</td>
+      <td>{{data.ico}}</td>
+      <td>{{data.title}}</td>
+      <td>{{data.first_name}} {{data.last_name}}</td>
+      <td>{{data.street}}, {{data.post_code}}<br>{{data.city}} {{data.zip_code}}</td>
+      <td>{{data.province}}</td>
+      <td>{{data.email}}</td>
+      <td>{{data.phone}}</td>
+      <td>{{data.ares}}</td>
+      <td>{{data.subject_of_business}}</td>
+      <td>
+        <span class="inline-flex">
+          <mmz-checkbox
+            color="success"
+            size="medium"
+            (change)="updatePerson(data.id!, data)"
+            [(ngModel)]="data.active"
+          >
+          </mmz-checkbox>
+        </span>
+      </td>
+      <td>{{data.payed ? 'Ano' : 'Ne'}}</td>
+      <td>
+        <span class="flex-row gap-base-half justify-center">
+          <mmz-button size="small" [routerLink]="['/physical-person-form', data.id]">Editovat</mmz-button>
+          <mmz-button color="danger" (click)="deletePerson(data.id!)">Smazat</mmz-button>
+        </span>
+      </td>
+    </tr>
+  </table>
+  <img *ngIf="data.length == 0" [src]="'assets/EmptyStateWText.svg'" class="emptyBackground" alt="empty">
+</div>
+<mmz-loading-spinner *ngIf="isLoading$ | async"></mmz-loading-spinner>

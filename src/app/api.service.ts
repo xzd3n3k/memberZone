@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {School} from "./School";
 import {Observable} from "rxjs";
 import {JuridicalPerson} from "./JuridicalPerson";
+import {PhysicalPerson} from "./PhysicalPerson";
 @Injectable({
   providedIn: 'root'
 })
@@ -51,5 +52,25 @@ export class ApiService {
 
   deleteJuridicalPerson(id: number) {
     return this.http.delete(`http://127.0.0.1:8000/delete-juridical-person/${id}`);
+  }
+
+  getPhysicalPersons() {
+    return this.http.get<Array<PhysicalPerson>>('http://127.0.0.1:8000/get-physical-persons');
+  }
+
+  getPhysicalPerson(id: number) {
+    return this.http.get<PhysicalPerson>(`http://127.0.0.1:8000/get-physical-person/${id}`);
+  }
+
+  updatePhysicalPerson(id: number, person: PhysicalPerson) {
+    return this.http.post<any>(`http://127.0.0.1:8000/update-physical-person/${id}`, person);
+  }
+
+  createPhysicalPerson(person: PhysicalPerson) {
+    return this.http.post<any>('http://127.0.0.1:8000/create-physical-person', person);
+  }
+
+  deletePhysicalPerson(id: number) {
+    return this.http.delete(`http://127.0.0.1:8000/delete-physical-person/${id}`);
   }
 }
