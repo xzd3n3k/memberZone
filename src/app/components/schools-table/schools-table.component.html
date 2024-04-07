@@ -3,6 +3,7 @@
   <table>
     <tr>
       <th>Registrační číslo</th>
+      <th>IČO</th>
       <th>Název školy, ředitel školy, telefon</th>
       <th>Adresa</th>
       <th>Kraj</th>
@@ -13,6 +14,7 @@
     </tr>
     <tr class="table-row" *ngFor="let data of data; index as i">
       <td>{{data.registration_number}}</td>
+      <td>{{data.ico}}</td>
       <td>{{data.name}} <br> {{data.principal}} <br> {{data.phone}}</td>
       <td>{{data.street}}, {{data.post_code}}<br>{{data.city}} {{data.zip_code}}</td>
       <td>{{data.province}}</td>

@@ -51,7 +51,8 @@ export class JuridicalPersonFormComponent implements OnInit {
       contact_person: '',
       phone: '',
       active: false,
-      payed: false
+      payed: false,
+      ico: '',
     }
 
     this.id = Number(this.route.snapshot.paramMap.get('id'));

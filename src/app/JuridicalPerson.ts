@@ -13,4 +13,5 @@ export interface JuridicalPerson {
   phone: string;
   active: boolean;
   payed: boolean;
+  ico: string;
 }

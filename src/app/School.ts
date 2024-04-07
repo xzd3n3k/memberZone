@@ -13,4 +13,5 @@ export interface School {
   email: string;
   active: boolean;
   payed: boolean;
+  ico: string;
 }

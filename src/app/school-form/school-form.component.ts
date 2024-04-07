@@ -53,7 +53,8 @@ export class SchoolFormComponent implements OnInit {
       province: '',
       email: '',
       active: false,
-      payed: false
+      payed: false,
+      ico: '',
     }
 
     this.id = Number(this.route.snapshot.paramMap.get('id'));
