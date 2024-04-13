@@ -1,0 +1,62 @@
+<div>
+  <mmz-heading [size]="25" align="left">Člen CTI - {{selected?.first_name}} {{selected?.last_name}}</mmz-heading>
+  <div>
+    <div>
+      <mmz-form-field label="Registrační číslo">
+        <mmz-text-input [(ngModel)]="selected!.registration_number"></mmz-text-input>
+      </mmz-form-field>
+      <mmz-form-field label="IČO">
+        <mmz-text-input [(ngModel)]="selected!.ico"></mmz-text-input>
+      </mmz-form-field>
+      <mmz-form-field label="Titul">
+        <mmz-text-input [(ngModel)]="selected!.title"></mmz-text-input>
+      </mmz-form-field>
+      <mmz-form-field label="Jméno">
+        <mmz-text-input [(ngModel)]="selected!.first_name"></mmz-text-input>
+      </mmz-form-field>
+      <mmz-form-field label="Příjmení">
+        <mmz-text-input [(ngModel)]="selected!.last_name"></mmz-text-input>
+      </mmz-form-field>
+      <mmz-form-field label="Ulice">
+        <mmz-text-input [(ngModel)]="selected!.street"></mmz-text-input>
+      </mmz-form-field>
+      <mmz-form-field label="Číslo popisné">
+        <mmz-text-input [(ngModel)]="selected!.post_code"></mmz-text-input>
+      </mmz-form-field>
+      <mmz-form-field label="Město">
+        <mmz-text-input [(ngModel)]="selected!.city"></mmz-text-input>
+      </mmz-form-field>
+      <mmz-form-field label="PSČ">
+        <mmz-text-input [(ngModel)]="selected!.zip_code"></mmz-text-input>
+      </mmz-form-field>
+      <mmz-form-field label="Stát">
+        <mmz-text-input [(ngModel)]="selected!.country"></mmz-text-input>
+      </mmz-form-field>
+      <mmz-form-field label="Kraj">
+        <mmz-text-input [(ngModel)]="selected!.province"></mmz-text-input>
+      </mmz-form-field>
+      <mmz-form-field label="Email">
+        <mmz-text-input [(ngModel)]="selected!.email"></mmz-text-input>
+      </mmz-form-field>
+      <mmz-form-field label="Telefon">
+        <mmz-text-input [(ngModel)]="selected!.phone"></mmz-text-input>
+      </mmz-form-field>
+      <mmz-form-field label="Předmět podnikání">
+        <mmz-text-input [(ngModel)]="selected!.subject_of_business"></mmz-text-input>
+      </mmz-form-field>
+      <mmz-form-field label="Ares">
+        <mmz-text-input [(ngModel)]="selected!.ares"></mmz-text-input>
+      </mmz-form-field>
+      <mmz-form-field label="Aktivní">
+        <mmz-checkbox [(ngModel)]="selected!.active"></mmz-checkbox>
+      </mmz-form-field>
+      <mmz-form-field label="Uhrazeno">
+        <mmz-checkbox [(ngModel)]="selected!.payed"></mmz-checkbox>
+      </mmz-form-field>
+    </div>
+    <span class="flex-row justify-space-between">
+      <mmz-button (click)="locationService.back()" color="secondary">Zpět</mmz-button>
+      <mmz-button (click)="onFormSubmit()">{{buttonText}}</mmz-button>
+    </span>
+  </div>
+</div>
