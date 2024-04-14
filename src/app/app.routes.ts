@@ -26,6 +26,11 @@ export const routes: Routes = [
         loadChildren: () => import('./components/physical-persons-table/physical-persons-table.routes')
           .then(r => r.routes)
       },
+      {
+        path: 'honored-members',
+        loadChildren: () => import('./components/honored-members-table/honored-members-table.routes')
+          .then(r => r.routes)
+      }
     ]
   },
   {'path': 'school-form', component: SchoolFormComponent},

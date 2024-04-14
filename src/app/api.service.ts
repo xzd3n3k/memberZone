@@ -4,6 +4,7 @@ import {School} from "./School";
 import {Observable} from "rxjs";
 import {JuridicalPerson} from "./JuridicalPerson";
 import {PhysicalPerson} from "./PhysicalPerson";
+import {HonoredMember} from "./HonoredMember";
 @Injectable({
   providedIn: 'root'
 })
@@ -72,5 +73,25 @@ export class ApiService {
 
   deletePhysicalPerson(id: number) {
     return this.http.delete(`http://127.0.0.1:8000/delete-physical-person/${id}`);
+  }
+
+  getHonoredMembers() {
+    return this.http.get<Array<HonoredMember>>('http://127.0.0.1:8000/get-honored-members');
+  }
+
+  getHonoredMember(id: number) {
+    return this.http.get<HonoredMember>(`http://127.0.0.1:8000/get-honored-member/${id}`);
+  }
+
+  updateHonoredMember(id: number, person: HonoredMember) {
+    return this.http.post<any>(`http://127.0.0.1:8000/update-honored-member/${id}`, person);
+  }
+
+  createHonoredMember(person: HonoredMember) {
+    return this.http.post<any>('http://127.0.0.1:8000/create-honored-member', person);
+  }
+
+  deleteHonoredMember(id: number) {
+    return this.http.delete(`http://127.0.0.1:8000/delete-honored-member/${id}`);
   }
 }
